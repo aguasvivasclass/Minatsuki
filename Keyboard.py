@@ -50,11 +50,17 @@ VK_Y     = 0x59
 VK_Z     = 0x5A
 VK_ESCAPE      = 0x1B
 VK_BACK        = 0x08
-VK_Volume_Up   = 0xAF
-VK_Volume_Down = 0xAE
 VK_ONE = 0x31
 VK_TWO = 0x32
-
+#Additional keys adding to support the D-pad and buttons on the Rock Band 4 drum
+VK_F1 = 0x70	# F1 key
+VK_F2 = 0x71	# F2 key
+VK_F3 = 0x72	# F3 key
+VK_F4 = 0x73	# F4 key
+VK_LEFT = 0x25	# LEFT ARROW key
+VK_UP = 0x26	# UP ARROW key
+VK_RIGHT = 0x27 # RIGHT ARROW key
+VK_DOWN = 0x28  # DOWN ARROW key
 
 # C struct definitions
 wintypes.ULONG_PTR = wintypes.WPARAM

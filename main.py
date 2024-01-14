@@ -1,26 +1,35 @@
 import Keyboard
 import HIDInput
 
-BTYE_INDEX_RED_DRUM = 43
-BTYE_INDEX_YELLOW_DRUM = 45
-BTYE_INDEX_BLUE_DRUM = 44
-BTYE_INDEX_GREEN_DRUM = 46
-
-BTYE_INDEX_GREEN_CYMBAL = 49
-BTYE_INDEX_BLUE_CYMBAL = 48
-BTYE_INDEX_YELLOW_CYMBAL = 47
+BTYE_INDEX_RED_DRUM = 67 # from 43
+BTYE_INDEX_YELLOW_DRUM = 70 # from 46
+BTYE_INDEX_BLUE_DRUM = 71 # from 44 
+BTYE_INDEX_GREEN_DRUM = 78 # from 46 
+BTYE_INDEX_GREEN_CYMBAL = 88 # from 49 
+BTYE_INDEX_BLUE_CYMBAL = 41 # from 48
+BTYE_INDEX_YELLOW_CYMBAL = 74 # from 47
 
 BTYE_INDEX_ANALOG = 6
 BTYE_INDEX_DPAD = 5
+#Added DPAD mapping 
+BTYE_INDEX_DPAD_UP = 38
+BTYE_INDEX_DPAD_DOWN = 40
+BTYE_INDEX_DPAD_LEFT = 37
+BTYE_INDEX_DPAD_RIGHT = 39
 
-BTYE_VALUE_RED_DRUM = 11
-BTYE_VALUE_YELLOW_DRUM = 115
-BTYE_VALUE_BLUE_DRUM = 91
-BTYE_VALUE_GREEN_DRUM = 195
+BTYE_INDEX_TRIANGLE = 114  # F3
+BTYE_INDEX_CIRCLE = 50  # 2
+BTYE_INDEX_CROSS = 27 # esc
+BTYE_INDEX_SQUARE = 8 # back
 
-BTYE_VALUE_GREEN_CYMBAL = 119
-BTYE_VALUE_BLUE_CYMBAL = 62
-BTYE_VALUE_YELLOW_CYMBAL = 129
+BTYE_VALUE_RED_DRUM = 11 # C 
+BTYE_VALUE_YELLOW_DRUM = 115 # F 
+BTYE_VALUE_BLUE_DRUM = 91 # G
+BTYE_VALUE_GREEN_DRUM = 195 # N
+
+BTYE_VALUE_GREEN_CYMBAL = 119 # X
+BTYE_VALUE_BLUE_CYMBAL = 62 # A
+BTYE_VALUE_YELLOW_CYMBAL = 129 # J
 
 BTYE_VALUE_SHARE = 16
 BTYE_VALUE_OPTIONS = 32
@@ -30,38 +39,40 @@ BTYE_VALUE_TRIANGLE = 136
 BTYE_VALUE_CIRCLE = 72
 BTYE_VALUE_CROSS = 40
 BTYE_VALUE_SQUARE = 24
+# adding additional definitions
+BTYE_VALUE_DPAD_UP = 56
+BTYE_VALUE_DPAD_DOWN = 64
+BTYE_VALUE_DPAD_LEFT = 55
+BTYE_VALUE_DPAD_RIGHT = 57
 
 mapping = {
     BTYE_INDEX_GREEN_CYMBAL : Keyboard.VK_X,
     BTYE_INDEX_BLUE_CYMBAL  : Keyboard.VK_A,
     BTYE_INDEX_YELLOW_CYMBAL: Keyboard.VK_J,
     BTYE_INDEX_RED_DRUM     : Keyboard.VK_C,
-    
-    # wierd bug: pressing VK_Volume_Down also trigger high tom, however we assume it is acceptable
     BTYE_INDEX_YELLOW_DRUM  : Keyboard.VK_F,
-    
-    # wierd bug: pressing VK_Volume_Up also trigger middle tom, however we assume it is acceptable
     BTYE_INDEX_BLUE_DRUM    : Keyboard.VK_G,
-
     BTYE_INDEX_GREEN_DRUM   : Keyboard.VK_N,
     
     # Bass Drum, Option, Share
-    BTYE_INDEX_ANALOG       : None,
-
-    # Special logic needed to find out whether it is d-pad or pad/cymbal
-    BTYE_INDEX_DPAD         : None
+    BTYE_INDEX_ANALOG       : None
 }
 
 analog_mapping = {
     
-    BTYE_VALUE_OPTIONS:       Keyboard.VK_Volume_Up,    
-    BTYE_VALUE_SHARE:         Keyboard.VK_Volume_Down,
+    BTYE_VALUE_OPTIONS:       Keyboard.VK_F1, #volume up button not common on laptops usually in combo with fn    
+    BTYE_VALUE_SHARE:         Keyboard.VK_F2, #volume up button not common on laptops usually in combo with fn
     BTYE_VALUE_RIGHT_PADDLE:  Keyboard.VK_SPACE,
 
-    BTYE_VALUE_TRIANGLE:      Keyboard.VK_ONE,          # Self define system key
+    BTYE_VALUE_TRIANGLE:      Keyboard.VK_F3,          # Self define system key
     BTYE_VALUE_CIRCLE:        Keyboard.VK_TWO,          # Self define system key
     BTYE_VALUE_CROSS:         Keyboard.VK_ESCAPE,
-    BTYE_VALUE_SQUARE:        Keyboard.VK_BACK
+    BTYE_VALUE_SQUARE:        Keyboard.VK_BACK,
+    #test
+    BTYE_INDEX_DPAD_UP:       Keyboard.VK_UP,
+    BTYE_INDEX_DPAD_DOWN:     Keyboard.VK_DOWN,
+    BTYE_INDEX_DPAD_LEFT:     Keyboard.VK_LEFT,
+    BTYE_INDEX_DPAD_RIGHT:    Keyboard.VK_RIGHT
 }
 
 mapping_keys_list = list(mapping)
